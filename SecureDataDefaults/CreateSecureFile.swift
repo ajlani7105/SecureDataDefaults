@@ -12,11 +12,11 @@ class SecureFileDefaults {
 
 }
 
-class SecureFile {
+public class SecureFile {
     
     private static var SecureFileKey    = ""
 
-    init (SecureFileKey : String,KeyData : String){
+    public init (SecureFileKey : String,KeyData : String){
         if KeyData.count != 16 || SecureFileKey.isEmpty {
             debugPrint("SecureFileError : Key length most be 16 for AES-128bit keys and file key length not empty")
             return

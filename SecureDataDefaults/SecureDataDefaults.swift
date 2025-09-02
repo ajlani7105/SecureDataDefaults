@@ -3,12 +3,11 @@ import Foundation
 import CommonCrypto
 
 
-class SecureDataDefaults {
+public class SecureDataDefaults {
     
-    static var DefaultFolderName = "AppData"
     static var secureFile : SecureFile? = nil
     
-    init (SecureFileKey FileKey : String, DataKey KeyData : String) {
+    public init (SecureFileKey FileKey : String, DataKey KeyData : String) {
         if KeyData.count != 16 || FileKey.count != 16 {
             debugPrint("SecureDataDefaults : both Key length most be 16 long for AES-128bit keys and  key length can't be empty")
             return

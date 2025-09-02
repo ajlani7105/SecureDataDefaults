@@ -41,7 +41,7 @@ public class SecureDataDefaults {
     }
 
     
-     static func SaveData(_ codable: Codable, forKey key: String){
+    public static func SaveData(_ codable: Codable, forKey key: String){
          var isDirectory : ObjCBool = true
          let fileManager = FileManager.default
          let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -84,7 +84,7 @@ public class SecureDataDefaults {
 
 
     }
-    static func GetData<T: Codable>(forKey key: String, as type: T.Type) -> T? {
+    public static func GetData<T: Codable>(forKey key: String, as type: T.Type) -> T? {
       //  let data = // Fetch raw data from disk as done above
         let fileManager = FileManager.default
         let documentsURL = URL.documentsDirectory.appending(path: SecureFileDefaults.FolderName)
@@ -125,7 +125,7 @@ public class SecureDataDefaults {
         
     }
     
-    static func encrypt(data: Data, key: Data) -> Data? {
+    public static func encrypt(data: Data, key: Data) -> Data? {
         var outLength = Int(0)
         var buffer = Data(count: data.count + kCCBlockSizeAES128)
         let bufCount = buffer.count
@@ -151,7 +151,7 @@ public class SecureDataDefaults {
         buffer.count = outLength
         return buffer
     }
-    static func decrypt(data: Data, key: Data) -> Data? {
+    public static func decrypt(data: Data, key: Data) -> Data? {
         var outLength = Int(0)
         var buffer = Data(count: data.count + kCCBlockSizeAES128)
         let bufferCount = buffer.count

@@ -74,7 +74,7 @@ public class SecureFile {
         
         
     }
-    static func isSecretFileExists () -> Bool {
+    public static func isSecretFileExists () -> Bool {
         var isDirectory : ObjCBool = true
 
         let fileManager = FileManager.default

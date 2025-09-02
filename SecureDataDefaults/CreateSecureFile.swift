@@ -4,10 +4,10 @@ import Foundation
 
 
 
-class SecureFileDefaults {
-    static var FolderName = "AppData"
-    static var SecureFolderName = "SecretFolder"
-    static var SecureFileName = "Secret.scf"
+public class SecureFileDefaults {
+    public static var FolderName = "AppData"
+    public static var SecureFolderName = "SecretFolder"
+    public static var SecureFileName = "Secret.scf"
 
 
 }

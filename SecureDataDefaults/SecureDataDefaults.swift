@@ -85,32 +85,35 @@ public class SecureDataDefaults {
 
     }
     public static func GetData<T: Codable>(forKey key: String, as type: T.Type) -> T? {
-      //  let data = // Fetch raw data from disk as done above
+        var isDirectory : ObjCBool = true
+
         let fileManager = FileManager.default
-        let documentsURL = URL.documentsDirectory.appending(path: SecureFileDefaults.FolderName)
-        let KeyDataURL = documentsURL.appending(path: key + ".json")
-        var isDirectory : ObjCBool = false
+        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        if !FileManager().fileExists(atPath: documentsURL.path,isDirectory:  &isDirectory) {
+            debugPrint("SecureDataDefaults GetData : documents directory not found  .")
+            return nil;
+        }
+        let AppDataURL = documentsURL.appending(path: SecureFileDefaults.FolderName)
+        if !FileManager().fileExists(atPath: AppDataURL.path,isDirectory:  &isDirectory) {
+            debugPrint("SecureDataDefaults GetData : AppData directory not found  .")
+            return nil;
+        }
+        let KeyDataURL = AppDataURL.appending(path: key + ".json")
+        isDirectory = false
         if FileManager().fileExists(atPath: KeyDataURL.path,isDirectory: &isDirectory) {
-            //print("I am here")
             
             do {
-                if let fileData = fileManager.contents(atPath: KeyDataURL.path()) {
-                    let data =  fileData
-                    
-                    if let SecKeyData = secureFile?.GetKey() {
-                        if let secretKey = SecKeyData.data(using: .utf8) {
-                            if let decryptedData = SecureDataDefaults.decrypt(data: data, key: secretKey) {
-                                return try JSONDecoder().decode(T.self, from: decryptedData)
+                let data = try Data(contentsOf: KeyDataURL)
+                if let SecKeyData = secureFile?.GetKey() {
+                    if let secretKey = SecKeyData.data(using: .utf8) {
+                        if let decryptedData = SecureDataDefaults.decrypt(data: data, key: secretKey) {
+                            return try JSONDecoder().decode(T.self, from: decryptedData)
 
-                            }
                         }
                     }
-
-                    
-
                 }
-                
-                debugPrint("SecureDataDefaults Decoding Error  > codable : An unexpected error occurred ")
+                print("KeyFound ! \(secureFile?.GetKey() ?? "")")
+                debugPrint("SecureDataDefaults Decoding Error  > codable : reading data empty")
                 return nil
                 
             } catch let error {
@@ -119,7 +122,7 @@ public class SecureDataDefaults {
             }
         }
         
-        debugPrint("SecureDataDefaults GetData : not found  key .")
+        debugPrint("SecureDataDefaults GetData : key not found  key .")
 
         return nil
         

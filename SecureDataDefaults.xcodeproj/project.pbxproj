@@ -20,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		57A33D642E679A2C00636F99 /* libSecureDataDefaults.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSecureDataDefaults.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		57A341252E67AAFE00636F99 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -44,6 +45,7 @@
 		57A33D5B2E679A2C00636F99 = {
 			isa = PBXGroup;
 			children = (
+				57A341252E67AAFE00636F99 /* README.md */,
 				57A33D662E679A2C00636F99 /* SecureDataDefaults */,
 				57A33D652E679A2C00636F99 /* Products */,
 			);

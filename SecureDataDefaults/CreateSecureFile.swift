@@ -1,3 +1,13 @@
+/*
+ 
+ Abdulrhman Alhazmi (Alajlani)
+ github : https://github.com/ajlani7105
+ 
+ 3 Sep 2025
+ 
+ 
+ */
+
 import CryptoKit
 import Foundation
 
@@ -17,7 +27,7 @@ public class SecureFile {
     private static var SecureFileKey    = ""
 
     public init (SecureFileKey : String,KeyData : String){
-        if KeyData.count != 16 || SecureFileKey.isEmpty {
+        if KeyData.count != 16 || SecureFileKey.count != 16 {
             debugPrint("SecureFileError : Key length most be 16 for AES-128bit keys and file key length not empty")
             return
         }

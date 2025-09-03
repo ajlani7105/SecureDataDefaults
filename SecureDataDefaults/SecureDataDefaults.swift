@@ -1,3 +1,12 @@
+/*
+ 
+ Abdulrhman Alhazmi (Alajlani)
+ github : https://github.com/ajlani7105
+ 
+ 3 Sep 2025
+ 
+ 
+ */
 
 import Foundation
 import CommonCrypto

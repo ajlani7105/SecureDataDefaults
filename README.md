@@ -32,7 +32,7 @@ let secureDataDefault = SecureDataDefaults(SecureFileKey: "ArarCityNorthBor", Da
 ```
 > [!NOTE]
 > 🔑 only support and work with (AES-128bit) for now 
->  > so string keys most be 16 lenght .
+>  > so string keys most be 16 lenghts 🔐.
 
 
 

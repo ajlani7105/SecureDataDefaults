@@ -4,7 +4,7 @@
 
 ## 👁️ what's the problem with UserDefaults in Foundation ❓
 - 👉 UserDefaults does not use encryption in storing data for your app 👽.
-- 👉 **From personal use, I found that UserDefaults lose data with unkown issues 🤔 and you can't tracking it.**
+- 👉 **From personal use, I found that UserDefaults lose data with unkown issues 🤔 and you I can't tracking it.**
 - 👉 sometime you need to store data that you don't need to put them in Database and you want fast way to store them and access them without using SwiftData,CoreData complexity ☢️,data like web history,game user info , simple data that doesn't involve passwords and sensitve logins ☠️.
 
 

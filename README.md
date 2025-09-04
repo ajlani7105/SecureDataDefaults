@@ -1,4 +1,4 @@
-# 🔐 SecureDataDefaults library
+# 🔐 SecureDataDefaults
 > create secure data defaults in iOS 📱 & MacOS 💻 & others 💎 .
 
 

@@ -30,8 +30,8 @@ struct History : Codable {
 ```swift
 let secureDataDefault = SecureDataDefaults(SecureFileKey: "ArarCityNorthBor", DataKey: "_DataDefaultArar")
 ```
+> [!NOTE]
 > 🔑 only support and work with (AES-128bit) for now 
-
 >  so string keys most be 16 lenght .
 
 

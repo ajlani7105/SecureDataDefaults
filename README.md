@@ -57,7 +57,7 @@ if let GetData = SecureDataDefaults.GetData(forKey: "UserHistory", as: [History]
 > [!TIP]
 > All Data saved into document directory under folder name **"AppData"** .
 > > so in case you need to delete all data you can look inside document directory > then AppData directory .
-> > you can change default names for your Data from public class **SecureFileDefaults** .
+> > > you can change default names for your Data from public class **SecureFileDefaults** .
  ```swift
 public class SecureFileDefaults {
     public static var FolderName = "AppData"

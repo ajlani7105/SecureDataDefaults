@@ -67,7 +67,7 @@ public class SecureFileDefaults {
 
 }
 ```
-### <span style="color:orange;">change the default name </span> 
+<span style="color:orange;">change the default name </span> 
 ```swift
 SecureFileDefaults.FolderName = "MyDataFolder"
 ```

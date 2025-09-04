@@ -1,5 +1,5 @@
 # 🔐 SecureDataDefaults library
-> create secure data defaults in iOS & MacOS & others .
+> create secure data defaults in iOS 📱 & MacOS 💻 & others 💎 .
 
 
 ## 👁️ what's the problem with UserDefaults in Foundation ❓

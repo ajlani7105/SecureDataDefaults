@@ -11,7 +11,7 @@ create secure data defaults in iOS & MacOS &others .
 
 
 # 🎯 usage 
-### 1 - write your struct to create your own data , important that your struct confirm to Codable protocol !
+### 1 - write your struct to create your own data 
 ```swift
 struct History : Codable {
     var Name : String
@@ -22,6 +22,9 @@ struct History : Codable {
     }
 }
 ```
+> [!IMPORTANT]
+> Your struct always need to confirm to Codable protocol !
+
 
 ### 2 - Create SecureDataDefaults Object and create secure keys for both file and data
 ```swift
